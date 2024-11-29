@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/components/remedy_card.dart';
 import 'package:flutter_widgets/components/text_component.dart';
 
 void main() {
@@ -51,7 +52,11 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            MyCustomText(),
+            const MyCustomText(),
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: RemedyCard(),
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
