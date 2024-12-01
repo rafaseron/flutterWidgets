@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/bottom_navigation_list.dart';
+import 'package:flutter_widgets/components/remedy_card.dart';
 import 'package:flutter_widgets/components/text_component.dart';
+import 'package:flutter_widgets/components/topbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,15 +46,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
+      appBar: const TopBar(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            MyCustomText(),
+            const MyCustomText(),
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: RemedyCard(),
+            ),
             const Text(
               'You have pushed the button this many times:',
             ),
@@ -67,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
+      bottomNavigationBar: BottomNavigationBar(items: myItemList),
     );
   }
 }
